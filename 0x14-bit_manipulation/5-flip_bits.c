@@ -2,21 +2,22 @@
 
 /**
  * flip_bits - counts the number of bits to change
- * @n: first number
- * @o: second number
+ * to get from one number to another
+ * @n: 1st number
+ * @m: 2nd number
  *
  * Return: number of bits to change
  */
 
-unsigned int flip_bits(unsigned long int n, unsigned long int o)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int i, count = 0;
+	int a, count = 0;
 	unsigned long int current;
-	unsigned long int exclusive = n ^ o;
+	unsigned long int exclusive = n ^ m;
 
-	for (i = 63; i >= 0; i--)
+	for (a = 63; a >= 0; a--)
 	{
-		current = exclusive >> i;
+		current = exclusive >> a;
 		if (current & 1)
 			count++;
 	}
